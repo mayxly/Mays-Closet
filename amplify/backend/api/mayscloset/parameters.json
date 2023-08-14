@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "mayscloset",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": "false",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmayscloset42a1cf87",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

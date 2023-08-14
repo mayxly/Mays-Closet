@@ -1,0 +1,36 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mayscloset-prod-144618-authRole",
+      "UnauthRoleArn": "arn:aws:iam::023785177664:role/amplify-mayscloset-prod-144618-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::023785177664:role/amplify-mayscloset-prod-144618-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-mayscloset-prod-144618-deployment",
+      "UnauthRoleName": "amplify-mayscloset-prod-144618-unauthRole",
+      "StackName": "amplify-mayscloset-prod-144618",
+      "StackId": "arn:aws:cloudformation:us-east-2:023785177664:stack/amplify-mayscloset-prod-144618/dad1cdb0-3ad2-11ee-bfaa-02190ab1a59d",
+      "AmplifyAppId": "d2gqpuplx0prb1"
+    },
+    "categories": {
+      "auth": {
+        "mayscloset42a1cf87": {}
+      },
+      "function": {
+        "processPayment": {
+          "deploymentBucketName": "amplify-mayscloset-prod-144618-deployment",
+          "s3Key": "amplify-builds/processPayment-485759622f4d62363071-build.zip"
+        },
+        "createOrder": {
+          "deploymentBucketName": "amplify-mayscloset-prod-144618-deployment",
+          "s3Key": "amplify-builds/createOrder-374346626d2f544b4d6b-build.zip"
+        }
+      },
+      "storage": {
+        "ClothingImages": {}
+      },
+      "api": {
+        "mayscloset": {}
+      }
+    }
+  }
+}
