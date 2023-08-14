@@ -18,11 +18,11 @@
       "function": {
         "processPayment": {
           "deploymentBucketName": "amplify-mayscloset-prod-144618-deployment",
-          "s3Key": "amplify-builds/processPayment-485759622f4d62363071-build.zip"
+          "s3Key": "amplify-builds/processPayment-4e654e73515a6d6f374a-build.zip"
         },
         "createOrder": {
           "deploymentBucketName": "amplify-mayscloset-prod-144618-deployment",
-          "s3Key": "amplify-builds/createOrder-374346626d2f544b4d6b-build.zip"
+          "s3Key": "amplify-builds/createOrder-2b2f6d4f55386b6e552b-build.zip"
         }
       },
       "storage": {
