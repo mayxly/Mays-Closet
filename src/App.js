@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Amplify
-import Amplify from "aws-amplify";
+import {Amplify, Auth} from "aws-amplify";
+// import '@aws-amplify/ui-react/styles.css';
 
 // Pages
 import Home from "./pages/Home"
@@ -18,6 +19,7 @@ import Header from "./components/Header"
 // Amplify Configurations
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
+Auth.configure(awsExports);
 
 
 const App = () => {

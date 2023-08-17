@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import { v4 as uuidv4 } from "uuid";
-import { listBooks } from "../api/queries";
+import { listClothingItems } from "../api/queries";
 import { processOrder } from "../api/mutations";
 
 const BookContext = React.createContext();
@@ -33,10 +33,10 @@ const BookProvider = ({ children }) => {
       setLoading(true);
       // Switch authMode to API_KEY for public access
       const { data } = await API.graphql({
-        query: listBooks,
+        query: listClothingItems,
         authMode: "API_KEY"
       });
-      const books = data.listBooks.items;
+      const books = data.listClothingItems.items;
       const featured = books.filter((book) => {
         return !!book.featured;
       });

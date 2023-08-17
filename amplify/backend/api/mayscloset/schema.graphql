@@ -2,12 +2,12 @@ type ClothingItem
   @model(subscriptions: null)
   @auth(
     rules: [
-      # allow admins to create, update and delete clothing items
-      { allow: groups, groups: ["Admin"] }
+      # # allow admins to create, update and delete clothing items
+      # { allow: groups, groups: ["Admin"] }
       # allow all authenticated users to view clothing items
-      { allow: private, operations: [read] }
+      { allow: private, operations: [create, read, update, delete] }
       # allow all guest users (not authenticated) to view clothing items
-      { allow: public, operations: [read] }
+      { allow: public, operations: [create, read, update, delete] }
     ]
   ) {
   id: ID!
@@ -30,6 +30,7 @@ type ClothingOrder
       # allow admins to create clothing orders for customers by using customer email in lambda
       { allow: owner, identityClaim: "email", ownerField: "customer" }
       { allow: groups, groups: ["Admin"] }
+      { allow: public, operations: [create, read, update, delete] }
     ]
   ) {
   id: ID!
@@ -47,6 +48,7 @@ type Order
       { allow: owner, identityClaim: "email", ownerField: "customer" }
       # allow admins to view orders
       { allow: groups, groups: ["Admin"] }
+      { allow: public, operations: [create, read, update, delete] }
     ]
   )
   @key(name: "byUser", fields: ["user"]) {

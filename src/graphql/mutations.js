@@ -20,6 +20,8 @@ export const createClothingItem = /* GraphQL */ `
       condition
       featured
       price
+      createdAt
+      updatedAt
       orders {
         items {
           id
@@ -32,8 +34,6 @@ export const createClothingItem = /* GraphQL */ `
         nextToken
         __typename
       }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -52,6 +52,8 @@ export const updateClothingItem = /* GraphQL */ `
       condition
       featured
       price
+      createdAt
+      updatedAt
       orders {
         items {
           id
@@ -64,8 +66,6 @@ export const updateClothingItem = /* GraphQL */ `
         nextToken
         __typename
       }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -84,6 +84,8 @@ export const deleteClothingItem = /* GraphQL */ `
       condition
       featured
       price
+      createdAt
+      updatedAt
       orders {
         items {
           id
@@ -96,8 +98,6 @@ export const deleteClothingItem = /* GraphQL */ `
         nextToken
         __typename
       }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -111,19 +111,6 @@ export const createClothingOrder = /* GraphQL */ `
       id
       clothing_id
       order_id
-      order {
-        id
-        user
-        date
-        total
-        clothin_items {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
       clothin_item {
@@ -135,12 +122,25 @@ export const createClothingOrder = /* GraphQL */ `
         condition
         featured
         price
+        createdAt
+        updatedAt
         orders {
           nextToken
           __typename
         }
+        __typename
+      }
+      order {
+        id
+        user
+        date
+        total
         createdAt
         updatedAt
+        clothin_items {
+          nextToken
+          __typename
+        }
         __typename
       }
       __typename
@@ -156,19 +156,6 @@ export const updateClothingOrder = /* GraphQL */ `
       id
       clothing_id
       order_id
-      order {
-        id
-        user
-        date
-        total
-        clothin_items {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
       clothin_item {
@@ -180,12 +167,25 @@ export const updateClothingOrder = /* GraphQL */ `
         condition
         featured
         price
+        createdAt
+        updatedAt
         orders {
           nextToken
           __typename
         }
+        __typename
+      }
+      order {
+        id
+        user
+        date
+        total
         createdAt
         updatedAt
+        clothin_items {
+          nextToken
+          __typename
+        }
         __typename
       }
       __typename
@@ -201,19 +201,6 @@ export const deleteClothingOrder = /* GraphQL */ `
       id
       clothing_id
       order_id
-      order {
-        id
-        user
-        date
-        total
-        clothin_items {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
       clothin_item {
@@ -225,12 +212,25 @@ export const deleteClothingOrder = /* GraphQL */ `
         condition
         featured
         price
+        createdAt
+        updatedAt
         orders {
           nextToken
           __typename
         }
+        __typename
+      }
+      order {
+        id
+        user
+        date
+        total
         createdAt
         updatedAt
+        clothin_items {
+          nextToken
+          __typename
+        }
         __typename
       }
       __typename
@@ -247,6 +247,8 @@ export const createOrder = /* GraphQL */ `
       user
       date
       total
+      createdAt
+      updatedAt
       clothin_items {
         items {
           id
@@ -259,8 +261,6 @@ export const createOrder = /* GraphQL */ `
         nextToken
         __typename
       }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -275,6 +275,8 @@ export const updateOrder = /* GraphQL */ `
       user
       date
       total
+      createdAt
+      updatedAt
       clothin_items {
         items {
           id
@@ -287,8 +289,6 @@ export const updateOrder = /* GraphQL */ `
         nextToken
         __typename
       }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -303,6 +303,8 @@ export const deleteOrder = /* GraphQL */ `
       user
       date
       total
+      createdAt
+      updatedAt
       clothin_items {
         items {
           id
@@ -315,8 +317,6 @@ export const deleteOrder = /* GraphQL */ `
         nextToken
         __typename
       }
-      createdAt
-      updatedAt
       __typename
     }
   }
