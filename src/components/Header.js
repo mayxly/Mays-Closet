@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import logo from '../assets/logo-with-name.png';
 
 const Header = () => {
-    return (
+    return ( 
+    <>
+        <header className="mini-head">
+            <p>SUMMER CLOTHING DROP NOW LIVE</p>
+        </header>
         <header className="main-head">
             <nav>
-                <h1 id="logo">Wisdomly</h1>
+                <img width="100px" style={{marginRight: "40%"}} src={require('../assets/logo-with-name.png')}></img>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/books">Books</Link>
+                        <Link to="/books">All Items</Link>
                     </li>
                     <li>
                         <Link to="/cart">Cart</Link>
@@ -22,6 +27,7 @@ const Header = () => {
                 </ul>
             </nav>
         </header>
+    </>
     )
 }
 

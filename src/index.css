@@ -62,8 +62,16 @@ a {
 /* Nav Section */
 
 .main-head {
-  background: #131c27;
+  background: #DDCCBE;
   color: white;
+}
+
+.mini-head {
+  background: #BF9E8E;
+  color: white;
+  height: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 nav {
@@ -71,7 +79,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   min-height: 10vh;
-  padding: 2rem;
+  padding: 1rem;
   width: 90%;
   margin: auto;
 }
@@ -82,12 +90,6 @@ nav ul {
   justify-content: space-around;
   align-items: center;
   list-style: none;
-}
-
-#logo {
-  flex: 2 1 40rem;
-  font-family: 'Pattaya', sans-serif;
-  font-weight: 400;
 }
 
 /* Hero Section */
