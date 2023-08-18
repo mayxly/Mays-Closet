@@ -13,6 +13,7 @@ const {
 
 const Admin = () => {
     const [image, setImage] = useState(null);
+    const [listingPosted, setListingPosted] = useState(false)
     const [clothingItemDetails, setclothingItemDetails] = useState({ title: "", description: "", image: "", type: "", price: "", condition: "" });
 
     const handleSubmit = async (e) => {
@@ -22,6 +23,7 @@ const Admin = () => {
             if (!clothingItemDetails.title || !clothingItemDetails.price) return
             await API.graphql(graphqlOperation(createClothingItem, { input: clothingItemDetails }))
             setclothingItemDetails({ title: "", description: "", image: "", type: "", price: "", condition: "" })
+            setListingPosted(true)
         } catch (err) {
             console.log('error creating todo:', err)
         }
@@ -49,7 +51,11 @@ const Admin = () => {
         }
     }
 
-    return (
+    return ( listingPosted ?
+        <div className='listing-posted-div'>
+            <h1>Listing Posted!</h1>
+            <button className="btn mt-5" onClick={() => setListingPosted(false)}>Post Another Item</button>
+        </div> :
         <section className="admin-wrapper">
             <AmplifyAuthenticator>
                 <section>
@@ -94,6 +100,16 @@ const Admin = () => {
                                     type="text"
                                     placeholder="Type the type of clothing item"
                                     onChange={(e) => setclothingItemDetails({ ...clothingItemDetails, type: e.target.value })}
+                                    required
+                                /></p>
+                            </div>
+                            <div className="title-form">
+                                <p><label htmlFor="title">Condition</label></p>
+                                <p><input
+                                    name="type"
+                                    type="text"
+                                    placeholder="Type the condition"
+                                    onChange={(e) => setclothingItemDetails({ ...clothingItemDetails, condition: e.target.value })}
                                     required
                                 /></p>
                             </div>
