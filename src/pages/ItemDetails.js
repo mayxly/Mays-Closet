@@ -21,7 +21,7 @@ const ItemDetails = () => {
   return (
     <section className="item-details">
       <div className="detail-image">
-        <img src={url} alt="10x Rule" />
+        <img style={{width: "30vw"}} src={url} alt="item image" />
       </div>
       <div className="detail-description">
         <h2>{title}</h2>
