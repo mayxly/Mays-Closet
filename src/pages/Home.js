@@ -6,18 +6,37 @@ import { BookContext } from "../context/books";
 
 const Home = () => {
     const { featured } = useContext(BookContext);
-    if (!featured.length) {
-        return <h3>No Featured Books</h3>
-    }
     return (
         <>
             <Hero />
+            <section className="home-about">
+                <div>
+                    <img width="80px" src={require("../assets/Hanger.png")} className="mb-3"></img>
+                    <p>Ethically and<br/> sustainably sourced</p>
+                </div>
+                <div>
+                    <img width="80px" src={require("../assets/Hanger.png")} className="mb-3"></img>
+                    <p>Out of vintage <br/>and pre-loved</p>
+                </div>
+                <div>                    
+                    <img width="80px" src={require("../assets/Hanger.png")} className="mb-5"></img>
+                    <p>Based in Toronto</p>
+                </div>
+            </section>
             <section className="featured">
                 <header className="featured-head">
                     <h3>Featured Collection</h3>
                 </header>
                 <div className="books featured-list">
-                    {featured.map(({ id, image, title }) => (
+                    {!featured.length ? 
+                    <>
+                        <div className="no-featured">
+                            <p>Sorry, there are no featured items at the moment!</p>
+                            <Link className="btn" to="/books">View All Items</Link>
+                        </div>
+                    </>
+                    :
+                    featured.map(({ id, image, title }) => (
                         <article key={id} className="book featured-book">
                             <div className="book-image">
                                 <img src={image} alt={title} />

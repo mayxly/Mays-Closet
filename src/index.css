@@ -1,6 +1,7 @@
 /* Global Styles */
 
 @import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/gistesy');
 
 * {
   margin: 0;
@@ -30,6 +31,7 @@ p {
 
 h2 {
   font-size: 4.8rem;
+  font-family: 'Gistesy', sans-serif;
 }
 
 h3 {
@@ -48,15 +50,16 @@ a {
 }
 
 .btn {
-  padding: 2rem 6rem;
-  background: #4c6e97;
+  padding: 1rem 6rem;
+  background: #BF9E8E;
   color: white;
   font-size: 2rem;
   text-transform: uppercase;
 }
 
 .btn:hover {
-  background: #121c27;
+  background: #5b5f64;
+  color: white;
 }
 
 /* Nav Section */
@@ -95,17 +98,23 @@ nav ul {
 /* Hero Section */
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url(./assets/hero-background.jpg);
+  background: url(./assets/clothing-layout.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 43vh;
+  min-height: 60vh;
+  opacity: 80%;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.hero-name {
+  font-size: 6rem;
+  color:white;
 }
 
 .hero h3 {
@@ -116,11 +125,38 @@ nav ul {
   width: 90%;
   margin: auto;
 }
+/* About Home Page*/
 
-/* Featured Books and Books Section */
+.home-about {
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+  margin-inline: 5%;
+  align-items: center;
+  text-align: center;
+
+  p {
+    font-size: 3rem;
+    line-height: 40px;
+  }
+}
+
+/* Featured Items and Items Section */
+
+.featured {
+  background-color: #f9f2ed;
+  min-height: 40vh;
+}
+
+.no-featured {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  gap: 20px;
+}
 
 .featured-head {
-  background: #343c44;
+  background: #BF9E8E;
   padding: 2rem;
   color: white;
   display: flex;
@@ -172,7 +208,8 @@ nav ul {
 }
 
 .book-link:hover {
-  background: #343c43;
+  background: #5b5f64;
+  color: white;
 }
 
 .book img {

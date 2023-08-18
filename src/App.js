@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css'
 // Amplify
 import {Amplify, Auth} from "aws-amplify";
 // import '@aws-amplify/ui-react/styles.css';
