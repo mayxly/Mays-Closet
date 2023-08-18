@@ -1,25 +1,25 @@
 import React, { useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { BookContext } from "../context/books";
+import { ItemContext } from "../context/items";
 import { CartContext } from "../context/cart";
 
-const BookDetails = () => {
+const ItemDetails = () => {
   const { id } = useParams();
   const history = useHistory();
-  const { books } = useContext(BookContext);
+  const { items } = useContext(ItemContext);
   const { addToCart } = useContext(CartContext);
 
-  const book = books.find((book) => {
-    return book.id === id;
+  const item = items.find((item) => {
+    return item.id === id;
   });
-  if (!book) {
+  if (!item) {
     return <h3>Loading...</h3>;
   }
 
-  const { image: url, title, description, author, price } = book;
+  const { image: url, title, description, author, price } = item;
 
   return (
-    <section className="book-details">
+    <section className="item-details">
       <div className="detail-image">
         <img src={url} alt="10x Rule" />
       </div>
@@ -31,7 +31,7 @@ const BookDetails = () => {
         <button
           className="btn"
           onClick={() => {
-            addToCart({ ...book, id });
+            addToCart({ ...item, id });
             history.push("/cart");
           }}
         >
@@ -42,4 +42,4 @@ const BookDetails = () => {
   );
 };
 
-export default BookDetails;
+export default ItemDetails;

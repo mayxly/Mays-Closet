@@ -4,15 +4,15 @@ import { v4 as uuidv4 } from "uuid";
 import { listClothingItems } from "../api/queries";
 import { processOrder } from "../api/mutations";
 
-const BookContext = React.createContext();
+const ItemContext = React.createContext();
 
-const BookProvider = ({ children }) => {
-  const [books, setBooks] = useState([]);
+const ItemProvider = ({ children }) => {
+  const [items, setItems] = useState([]);
   const [featured, setFeatured] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchBooks();
+    fetchItems();
   }, []);
 
   const checkout = async (orderDetails) => {
@@ -28,7 +28,7 @@ const BookProvider = ({ children }) => {
     }
   };
 
-  const fetchBooks = async () => {
+  const fetchItems = async () => {
     try {
       setLoading(true);
       // Switch authMode to API_KEY for public access
@@ -36,11 +36,11 @@ const BookProvider = ({ children }) => {
         query: listClothingItems,
         authMode: "API_KEY"
       });
-      const books = data.listClothingItems.items;
-      const featured = books.filter((book) => {
-        return !!book.featured;
+      const items = data.listClothingItems.items;
+      const featured = items.filter((item) => {
+        return !!item.featured;
       });
-      setBooks(books);
+      setItems(items);
       setFeatured(featured);
       setLoading(false);
     } catch (err) {
@@ -49,10 +49,10 @@ const BookProvider = ({ children }) => {
   };
 
   return (
-    <BookContext.Provider value={{ books, featured, loading, checkout }}>
+    <ItemContext.Provider value={{ items, featured, loading, checkout }}>
       {children}
-    </BookContext.Provider>
+    </ItemContext.Provider>
   );
 };
 
-export { BookContext, BookProvider };
+export { ItemContext, ItemProvider };
