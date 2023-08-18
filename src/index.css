@@ -317,6 +317,13 @@ nav ul {
 
 /* Cart Section */
 
+.empty-cart-div {
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+  align-items: center;
+}
+
 .cart {
   width: 90%;
   margin: auto;
