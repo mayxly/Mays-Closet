@@ -6,10 +6,10 @@ May's Closet is a buy and sell clothing retail website used to sell clothing art
 * **React**, **AWS Amplify UI**, **CSS** for the frontend
 * **AWS S3 Buckets** for hosting data and storing clothing images
 * **AWS AppSync** to connect with the **GraphQL API** for handling **CRUD** operations
-* **AWS DynamoDB** for storing listings and clothing orders
+* **AWS DynamoDB** for storing listings and clothing orders in data tables
 * **AWS Lambda** for triggering functions to make payments and create clothing orders
 * **Stripe** to process payments and charge the customers
-* **AWS Cognito** for setting up Admin groups for posting clothing items
+* **AWS Cognito** for handling account creation for users upon checkout and setting up Admin groups for posting clothing items
 ## Architectural Diagram
 ![image](https://github.com/mayxly/Mays-Closet/assets/72419841/140efe1c-0d9a-4546-acda-d54bb393e58c)
 ## Project Demo
